@@ -1,4 +1,5 @@
-/* eslint-disable no-console */
+#!/usr/bin/env node
+
 const cp = require('child_process');
 
 const { RUN_TIMEOUT = 3600 * 1000 } = process.env;
