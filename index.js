@@ -13,9 +13,9 @@ function main (command, checkString, ports = []) {
         timeout: RUN_TIMEOUT,
     });
     let str = '';
-    const handler = data => {
+    const handler = type => data => {
         str += data;
-        console.log(data + '');
+        process[type].write(data);
         if (str.includes(checkString)) {
             str = '';
             for (const port of ports) {
@@ -28,6 +28,6 @@ function main (command, checkString, ports = []) {
             }
         }
     };
-    child.stdout.on('data', handler);
-    child.stderr.on('data', handler);
+    child.stdout.on('data', handler('stdout'));
+    child.stderr.on('data', handler('stderr'));
 }
