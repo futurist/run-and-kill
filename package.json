@@ -1,6 +1,6 @@
 {
     "name": "run-and-kill",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "bin": "index.js",
     "main": "index.js",
     "scripts": {}
